@@ -1,0 +1,38 @@
+{
+  "name": "eve",
+  "version": "0.0.1",
+  "description": "Eve",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "echo test",
+    "testx": "IP=0.0.0.0 PORT=3030 node --expose-internals node_modules/bin/mocha --timeout 5000 tests/*_test.js",
+    "uglifyjs": "node_modules/uglify-js/bin/uglifyjs public/js/site.js -o public/js/site.min.js -c -m",
+    "uglifycss": "node_modules/uglifycss/uglifycss --output public/css/site.min.css public/css/layout-edit.css public/css/layout.css public/css/site.css",
+    "build": "npm run uglifyjs && npm run uglifycss"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PrincessEve/Eve.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PrincessEve/Eve/issues"
+  },
+  "homepage": "https://github.com/PrincessEve/Eve#readme",
+  "dependencies": {
+    "chai": "^4.1.2",
+    "chai-http": "^3.0.0",
+    "ejs": "^2.5.7",
+    "express": "^4.16.2",
+    "mocha": "^4.1.0",
+    "mongodb": "^3.0.1",
+    "morgan": "^1.9.0",
+    "object-assign": "^4.1.1"
+  },
+  "devDependencies": {
+    "uglify-js": "^3.3.4",
+    "uglifycss": "0.0.27"
+  }
+}
